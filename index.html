@@ -1,523 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main page</title>
-    <link rel="stylesheet" href="./css/index.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <header class="header" id="header">
-      <div class="header__wrapper">
-        <a href="./index.html" class="header__logo logo">
-          BlogWorld
-        </a>
-        <nav class="header__nav">
-          <ul class="header__list">
-            <li class="header__item">
-              <button id="add-post">Add new post</button>
-            </li>
-            <li class="header__item" id="home">
-              <a class="header__link" href="./index.html">
-                Home
-              </a>
-            </li>
-            <li class="header__item">
-              <a class="header__link" href="#portfolio">
-                Portfolio
-              </a>
-            </li>
-            <li class="header__item">
-              <a class="header__link" href="./blog.html">
-                Blog
-              </a>
-            </li>
-            <li class="header__item">
-              <a class="header__link" href="#pages">
-                Pages
-              </a>
-            </li>
-            <li class="header__item">
-              <a class="header__link" href="#about">
-                About
-              </a>
-            </li>
-            <li class="header__item">
-              <a class="header__link" href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <section class="front">
-        <div class="front__wrapper">
-          <h1 class="front__head head1">
-            Ideas and perspectives you won’t find anywhere else.
-          </h1>
-          <p class="front__paragraph paragraph">
-            BlogWorld taps into the brains of the world’s most insightful
-            writers, thinkers, and storytellers to bring you the smartest takes
-            on topics that matter. So whatever your interest, you can always
-            find fresh thinking and unique perspectives.
-          </p>
-          <button class="btn button button__dark front__button">Explore</button>
-          <button class="btn button button__light front__button">
-            Learn more
-          </button>
-        </div>
-      </section>
-      <div class="top">
-        <a href="#header" class="top__link" onclick="active()">Home</a>
-      </div>
-      <section class="about" id="about">
-        <div class="about__wrapper">
-          <h2 class="about__head head2">About us</h2>
-          <div class="about__line line"></div>
-          <p class="about__paragraph paragraph paragraph-center">
-            This is who we are - or at least who we strive to be…
-          </p>
-          <div class="about__container container">
-            <div class="about__section row">
-              <div class="about__items col-3">
-                <div class="about__item about__item-typo">
-                  <object
-                    data="./img/atom-icons/a-icon-typography.svg"
-                    type="image/svg+xml"
-                    class="icon icon__typography"
-                  ></object>
-                  <p class="about__paragraph paragraph">Typography</p>
-                </div>
-                <div class="about__item about__item-icons">
-                  <object
-                    data="./img/atom-icons/a-icon-iconset.svg"
-                    type="image/svg+xml"
-                    class="icon icon__iconset"
-                  ></object>
-                  <p class="about__paragraph paragraph">Icon set</p>
-                </div>
-                <div class="about__item about__item-accurate">
-                  <object
-                    data="./img/atom-icons/a-icon-accurate.svg"
-                    type="image/svg+xml"
-                    class="icon icon__accurate"
-                  ></object>
-                  <p class="about__paragraph paragraph">Accurate</p>
-                </div>
-              </div>
-              <div class="presentation__video about__video col">
-                <img
-                  class="presentation__pic about__pic"
-                  src="./img/home-page/About-picture.png"
-                  alt="about pic"
-                />
-                <button
-                  class="play presentation__play about__play"
-                  style="margin: 20px;"
-                >
-                  <object
-                    data="./img/atom-icons/a-icon-play.svg"
-                    type="image/svg+xml"
-                  ></object>
-                </button>
-                <!-- <video src="https://www.youtube.com/watch?v=sb6WlQiaJeM" width="860px" height="592px"></video> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main page</title>
+  <link rel="stylesheet" href="./css/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet" />
+</head>
 
-      <section class="posts" id="pages">
-        <h2 class="posts__head head2"><a href="#">Latest posts</a></h2>
-        <div class="posts__line__line line line-post"></div>
-        <p class="posts__paragraph paragraph paragraph-center">
-          Information is a source of learning. But unless it is organized,
-          processed and available to the right people
+<body>
+  <header class="header" id="header">
+    <div class="header__wrapper">
+      <a href="./index.html" class="header__logo logo">
+        BlogWorld
+      </a>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li class="header__item">
+            <button id="add-post">Add new post</button>
+          </li>
+          <li class="header__item" id="home">
+            <a class="header__link" href="./index.html">
+              Home
+            </a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#portfolio">
+              Portfolio
+            </a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="./blog.html">
+              Blog
+            </a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#pages">
+              Pages
+            </a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#about">
+              About
+            </a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#contact">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="front">
+      <div class="front__wrapper">
+        <h1 class="front__head head1">
+          Ideas and perspectives you won’t find anywhere else.
+        </h1>
+        <p class="front__paragraph paragraph">
+          BlogWorld taps into the brains of the world’s most insightful
+          writers, thinkers, and storytellers to bring you the smartest takes
+          on topics that matter. So whatever your interest, you can always
+          find fresh thinking and unique perspectives.
         </p>
-        <div class="posts__section container">
-          <div class="row">
-            <div class="posts__post col-4">
-              <img
-                class="posts__pic"
-                src="./img/home-page/Img-post-1.png"
-                alt="post pic"
-              />
-              <h3 class="posts__head head3">
-                In the Future We Will All Live in Star Wars
-              </h3>
-              <p class="posts__paragraph posts__paragraph-post">
-                The thing you’re doing now, reading prose on a screen, is going
-                out of fashion. The defining narrative of our online moment
-                concerns the decline of text, and the exploding reach and power
-                of audio and video…
-              </p>
-              <div class="posts__data data">
-                <span class="posts__data data">20 oct, 2019</span>
-                <span class="posts__data data data-read">10 min read</span>
-                <span class="posts__data data data-comment"
-                  ><a href="#">11</a></span
-                >
+        <button class="btn button button__dark front__button">Explore</button>
+        <button class="btn button button__light front__button">
+          Learn more
+        </button>
+      </div>
+    </section>
+    <div class="top">
+      <a href="#header" class="top__link" onclick="active()">Home</a>
+    </div>
+    <section class="about" id="about">
+      <div class="about__wrapper">
+        <h2 class="about__head head2">About us</h2>
+        <div class="about__line line"></div>
+        <p class="about__paragraph paragraph paragraph-center">
+          This is who we are - or at least who we strive to be…
+        </p>
+        <div class="about__container container">
+          <div class="about__section row">
+            <div class="about__items col-3">
+              <div class="about__item about__item-typo">
+                <object data="./img/atom-icons/a-icon-typography.svg" type="image/svg+xml"
+                  class="icon icon__typography"></object>
+                <p class="about__paragraph paragraph">Typography</p>
+              </div>
+              <div class="about__item about__item-icons">
+                <object data="./img/atom-icons/a-icon-iconset.svg" type="image/svg+xml"
+                  class="icon icon__iconset"></object>
+                <p class="about__paragraph paragraph">Icon set</p>
+              </div>
+              <div class="about__item about__item-accurate">
+                <object data="./img/atom-icons/a-icon-accurate.svg" type="image/svg+xml"
+                  class="icon icon__accurate"></object>
+                <p class="about__paragraph paragraph">Accurate</p>
               </div>
             </div>
-            <div class="posts__post col-4">
-              <img
-                class="posts__pic"
-                src="./img/home-page/Img-post-2.png"
-                alt="post pic"
-              />
-              <h3 class="posts__head head3">
-                Rubik’s Cube? No, Robotics and AI are…
-              </h3>
-              <p class="posts__paragraph posts__paragraph-post">
-                In other words, I will try to de-hype the crowd about the recent
-                development in robotics. Concretely, OpenAI has claimed some
-                pretty amazing results with learning to solve the Rubik’s cube
-                with a robotic hand…
-              </p>
-              <div class="posts__data data">
-                <span class="posts__data data">11 oct, 2019</span>
-                <span class="posts__data data data-read">7 min read</span>
-                <span class="posts__data data data-comment"
-                  ><a href="#">19</a></span
-                >
-              </div>
-            </div>
-            <div class="posts__post col-4">
-              <img
-                class="posts__pic"
-                src="./img/home-page/Img-post-3.png"
-                alt="post pic"
-              />
-              <h3 class="posts__head head3">
-                How the Internet of Things will Transfo…
-              </h3>
-              <p class="posts__paragraph posts__paragraph-post">
-                The Internet of Things (IoT) promises to be the most important
-                technological development for consumers since the advent of the
-                smartphone. Experts believe that this collection of
-                internet-connected technolog…
-              </p>
-              <div class="posts__data data">
-                <span class="posts__data data">28 sep, 2019</span>
-                <span class="posts__data data data-read">16 min read</span>
-                <span class="posts__data data data-comment"
-                  ><a href="#">41</a></span
-                >
-              </div>
+            <div class="presentation__video about__video col">
+              <img class="presentation__pic about__pic" src="./img/home-page/About-picture.png" alt="about pic" />
+              <button class="play presentation__play about__play" style="margin: 20px;">
+                <object data="./img/atom-icons/a-icon-play.svg" type="image/svg+xml"></object>
+              </button>
+              <!-- <video src="https://www.youtube.com/watch?v=sb6WlQiaJeM" width="860px" height="592px"></video> -->
             </div>
           </div>
         </div>
-      </section>
-      <section class="portfolio" id="portfolio">
-        <h2 class="info__head portfolio__head info__head-portfolio head2">
-          Latest portfolio
-        </h2>
-        <div class="info__line portfolio__line line line-portfolio"></div>
-        <p
-          class="info__paragraph portfolio__paragraph paragraph paragraph-center"
-        >
+      </div>
+    </section>
+
+    <section class="posts" id="pages">
+      <h2 class="posts__head head2"><a href="#">Latest posts</a></h2>
+      <div class="posts__line__line line line-post"></div>
+      <p class="posts__paragraph paragraph paragraph-center">
+        Information is a source of learning. But unless it is organized,
+        processed and available to the right people
+      </p>
+      <div class="posts__section container">
+        <div class="row">
+          <div class="posts__post col-4">
+            <img class="posts__pic" src="./img/home-page/Img-post-1.png" alt="post pic" />
+            <h3 class="posts__head head3">
+              In the Future We Will All Live in Star Wars
+            </h3>
+            <p class="posts__paragraph posts__paragraph-post">
+              The thing you’re doing now, reading prose on a screen, is going
+              out of fashion. The defining narrative of our online moment
+              concerns the decline of text, and the exploding reach and power
+              of audio and video…
+            </p>
+            <div class="posts__data data">
+              <span class="posts__data data">20 oct, 2019</span>
+              <span class="posts__data data data-read">10 min read</span>
+              <span class="posts__data data data-comment"><a href="#">11</a></span>
+            </div>
+          </div>
+          <div class="posts__post col-4">
+            <img class="posts__pic" src="./img/home-page/Img-post-2.png" alt="post pic" />
+            <h3 class="posts__head head3">
+              Rubik’s Cube? No, Robotics and AI are…
+            </h3>
+            <p class="posts__paragraph posts__paragraph-post">
+              In other words, I will try to de-hype the crowd about the recent
+              development in robotics. Concretely, OpenAI has claimed some
+              pretty amazing results with learning to solve the Rubik’s cube
+              with a robotic hand…
+            </p>
+            <div class="posts__data data">
+              <span class="posts__data data">11 oct, 2019</span>
+              <span class="posts__data data data-read">7 min read</span>
+              <span class="posts__data data data-comment"><a href="#">19</a></span>
+            </div>
+          </div>
+          <div class="posts__post col-4">
+            <img class="posts__pic" src="./img/home-page/Img-post-3.png" alt="post pic" />
+            <h3 class="posts__head head3">
+              How the Internet of Things will Transfo…
+            </h3>
+            <p class="posts__paragraph posts__paragraph-post">
+              The Internet of Things (IoT) promises to be the most important
+              technological development for consumers since the advent of the
+              smartphone. Experts believe that this collection of
+              internet-connected technolog…
+            </p>
+            <div class="posts__data data">
+              <span class="posts__data data">28 sep, 2019</span>
+              <span class="posts__data data data-read">16 min read</span>
+              <span class="posts__data data data-comment"><a href="#">41</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+      <h2 class="info__head portfolio__head info__head-portfolio head2">
+        Latest portfolio
+      </h2>
+      <div class="info__line portfolio__line line line-portfolio"></div>
+      <p class="info__paragraph portfolio__paragraph paragraph paragraph-center">
+        Put there articles successfully special warrant submit agree what
+        along then
+      </p>
+      <div class="info__section portfolio__section container">
+        <div class="row portfolio__wrapper" id="portfolio-list">
+          <div class="portfolio__container">
+            <div
+              class="info__post info__post-hover info__post-ocean portfolio__post portfolio__post-hover portfolio__post-ocean col-4 d-flex flex-column justify-content-center">
+              <h3 class="info__title info__title-btns portfolio__title portfolio__title-btns head3">
+                Art Ocean
+              </h3>
+              <p class="info__paragraph info__paragraph-light portfolio__paragraph portfolio__paragraph-light">
+                Photography, art, nature
+              </p>
+              <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group" role="group" aria-label="First group">
+                  <button type="button" class="btn button button__transparent">
+                    <object data="./img/atom-icons/a-icon-attach.svg" type="image/svg+xml"
+                      class="icon icon__attach"></object>
+                  </button>
+                  <button type="button" class="btn button button__transparent">
+                    <object data="./img/atom-icons/a-icon-search.svg" type="image/svg+xml"
+                      class="icon icon__search"></object>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio__container">
+            <div
+              class="info__post info__post-hover info__post-city portfolio__post portfolio__post-hover portfolio__post-city col-4 d-flex flex-column justify-content-center">
+              <h3 class="info__title portfolio__title head3">City guide</h3>
+              <p class="info__paragraph info__paragraph-light portfolio__paragraph portfolio__paragraph-light">
+                Photography, city, way
+              </p>
+            </div>
+          </div>
+          <div class="portfolio__container">
+            <div
+              class="info__post info__post-hover info__post-mountains portfolio__post portfolio__post-hover portfolio__post-mountains col-4 d-flex flex-column justify-content-center">
+              <h3 class="info__title portfolio__title head3">Mountains</h3>
+              <p class="info__paragraph info__paragraph-light portfolio__paragraph portfolio__paragraph-light">
+                Art, hiking
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info__wrapper portfolio__wrapper button__wrapper d-flex justify-content-between"
+        id="portfolio-toolbar">
+        <button class="btn button button__nav portfolio__button portfolio__button-nav button__previous"
+          id="button-prev"></button>
+        <button class="btn button button__nav portfolio__button portfolio__button-nav button__next"
+          id="button-next"></button>
+      </div>
+      <button class="btn button button__light info__button portfolio__button">
+        See all works
+      </button>
+    </section>
+    <section class="testimonials">
+      <h2 class="testimonials__head testimonials__head head2">
+        Testimonials
+      </h2>
+      <div class="testimonials__line line line-testimonials"></div>
+      <div class="testimonials__container d-flex justify-content-center">
+        <button class="btn button button__nav button__previous"></button>
+        <div class="testimonials__person d-flex">
+          <div class="testimonials__citation d-flex flex-column justify-content-around">
+            <h4 class="testimonials__head testimonials__head-cite head4">
+              We move at a fast pace. I’m always working on something. I am
+              excited about it!
+            </h4>
+            <div class="testimonials__wrapper">
+              <p class="testimonials__author">Martin Oda</p>
+              <p class="testimonials__author">Product desgner</p>
+            </div>
+          </div>
+          <div class="testimonials__photo">
+            <img src="./img/home-page/User-img.png" alt="user pic" />
+          </div>
+        </div>
+        <button class="btn button button__nav button__next"></button>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="contact__wrapper">
+        <h2 class="contact__head head2">Contact us</h2>
+        <div class="contact__line line line-contact"></div>
+        <p class="contact__paragraph paragraph paragraph-center">
           Put there articles successfully special warrant submit agree what
           along then
         </p>
-        <div class="info__section portfolio__section container">
-          <div class="row portfolio__wrapper" id="portfolio-list">
-            <div class="portfolio__container">
-              <div
-                class="info__post info__post-hover info__post-ocean portfolio__post portfolio__post-hover portfolio__post-ocean col-4 d-flex flex-column justify-content-center"
-              >
-                <h3
-                  class="info__title info__title-btns portfolio__title portfolio__title-btns head3"
-                >
-                  Art Ocean
-                </h3>
-                <p
-                  class="info__paragraph info__paragraph-light portfolio__paragraph portfolio__paragraph-light"
-                >
-                  Photography, art, nature
-                </p>
-                <div
-                  class="btn-toolbar"
-                  role="toolbar"
-                  aria-label="Toolbar with button groups"
-                >
-                  <div class="btn-group" role="group" aria-label="First group">
-                    <button
-                      type="button"
-                      class="btn button button__transparent"
-                    >
-                      <object
-                        data="./img/atom-icons/a-icon-attach.svg"
-                        type="image/svg+xml"
-                        class="icon icon__attach"
-                      ></object>
-                    </button>
-                    <button
-                      type="button"
-                      class="btn button button__transparent"
-                    >
-                      <object
-                        data="./img/atom-icons/a-icon-search.svg"
-                        type="image/svg+xml"
-                        class="icon icon__search"
-                      ></object>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio__container">
-              <div
-                class="info__post info__post-hover info__post-city portfolio__post portfolio__post-hover portfolio__post-city col-4 d-flex flex-column justify-content-center"
-              >
-                <h3 class="info__title portfolio__title head3">City guide</h3>
-                <p
-                  class="info__paragraph info__paragraph-light portfolio__paragraph portfolio__paragraph-light"
-                >
-                  Photography, city, way
-                </p>
-              </div>
-            </div>
-            <div class="portfolio__container">
-              <div
-                class="info__post info__post-hover info__post-mountains portfolio__post portfolio__post-hover portfolio__post-mountains col-4 d-flex flex-column justify-content-center"
-              >
-                <h3 class="info__title portfolio__title head3">Mountains</h3>
-                <p
-                  class="info__paragraph info__paragraph-light portfolio__paragraph portfolio__paragraph-light"
-                >
-                  Art, hiking
-                </p>
-              </div>
-            </div>
+        <div class="contact__wrapper contact__wrapper-global">
+          <div class="contact__socials socials">
+            <a href="https://www.facebook.com/" class="socials__item">
+              <object data="./img/atom-icons/a-icon-facebook.svg" type="image/svg+xml"
+                class="icon icon__facebook"></object>
+            </a>
+            <a href="https://www.instagram.com/" class="socials__item">
+              <object data="./img/atom-icons/a-icon-instagram.svg" type="image/svg+xml"
+                class="icon icon__instagram"></object>
+            </a>
+            <a href="https://dribbble.com/" class="socials__item">
+              <object data="./img/atom-icons/a-icon-dribbble.svg" type="image/svg+xml"
+                class="icon icon__dribbble"></object>
+            </a>
           </div>
         </div>
-        <div
-          class="info__wrapper portfolio__wrapper button__wrapper d-flex justify-content-between"
-          id="portfolio-toolbar"
-        >
-          <button
-            class="btn button button__nav portfolio__button portfolio__button-nav button__previous"
-            id="button-prev"
-          ></button>
-          <button
-            class="btn button button__nav portfolio__button portfolio__button-nav button__next"
-            id="button-next"
-          ></button>
-        </div>
-        <button class="btn button button__light info__button portfolio__button">
-          See all works
-        </button>
-      </section>
-      <section class="testimonials">
-        <h2 class="testimonials__head testimonials__head head2">
-          Testimonials
-        </h2>
-        <div class="testimonials__line line line-testimonials"></div>
-        <div class="testimonials__container d-flex justify-content-center">
-          <button class="btn button button__nav button__previous"></button>
-          <div class="testimonials__person d-flex">
-            <div
-              class="testimonials__citation d-flex flex-column justify-content-around"
-            >
-              <h4 class="testimonials__head testimonials__head-cite head4">
-                We move at a fast pace. I’m always working on something. I am
-                excited about it!
-              </h4>
-              <div class="testimonials__wrapper">
-                <p class="testimonials__author">Martin Oda</p>
-                <p class="testimonials__author">Product desgner</p>
-              </div>
+        <div class="contact__wrapper contact__wrapper-form">
+          <div class="contact__form form">
+            <div class="form__header d-flex">
+              <object data="./img/atom-icons/a-icon-mail.svg" type="image/svg+xml"
+                class="icon icon__mail form__icon"></object>
+              <p class="form__paragraph paragraph">
+                Write us a few words about your project and we will prepare
+                proposal for you within 24 hours
+              </p>
             </div>
-            <div class="testimonials__photo">
-              <img src="./img/home-page/User-img.png" alt="user pic" />
-            </div>
-          </div>
-          <button class="btn button button__nav button__next"></button>
-        </div>
-      </section>
-      <section class="contact" id="contact">
-        <div class="contact__wrapper">
-          <h2 class="contact__head head2">Contact us</h2>
-          <div class="contact__line line line-contact"></div>
-          <p class="contact__paragraph paragraph paragraph-center">
-            Put there articles successfully special warrant submit agree what
-            along then
-          </p>
-          <div class="contact__wrapper contact__wrapper-global">
-            <div class="contact__socials socials">
-              <a href="https://www.facebook.com/" class="socials__item">
-                <object
-                  data="./img/atom-icons/a-icon-facebook.svg"
-                  type="image/svg+xml"
-                  class="icon icon__facebook"
-                ></object>
-              </a>
-              <a href="https://www.instagram.com/" class="socials__item">
-                <object
-                  data="./img/atom-icons/a-icon-instagram.svg"
-                  type="image/svg+xml"
-                  class="icon icon__instagram"
-                ></object>
-              </a>
-              <a href="https://dribbble.com/" class="socials__item">
-                <object
-                  data="./img/atom-icons/a-icon-dribbble.svg"
-                  type="image/svg+xml"
-                  class="icon icon__dribbble"
-                ></object>
-              </a>
-            </div>
-          </div>
-          <div class="contact__wrapper contact__wrapper-form">
-            <div class="contact__form form">
-              <div class="form__header d-flex">
-                <object
-                  data="./img/atom-icons/a-icon-mail.svg"
-                  type="image/svg+xml"
-                  class="icon icon__mail form__icon"
-                ></object>
-                <p class="form__paragraph paragraph">
-                  Write us a few words about your project and we will prepare
-                  proposal for you within 24 hours
-                </p>
-              </div>
-              <div class="form__wrapper d-flex">
-                <form action="URL" class="form__form">
-                  <label class="form__label">
-                    Your name
-                    <input
-                      type="text"
-                      name="name"
-                      class="form-control form__input input"
-                    />
-                  </label>
-                  <label class="form__label">
-                    Email
-                    <input
-                      type="email"
-                      name="email"
-                      class="form-control form__input input"
-                    />
-                  </label>
-                  <label
-                    class="form__label input input__pass input__pass-show"
-                    onclick="showPass()"
-                  >
-                    <span class="input__icon">show</span>
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    name="pass"
-                    id="pass"
-                    class="form-control form__input input input__pass input__pass-show"
-                  />
+            <div class="form__wrapper d-flex">
+              <form action="URL" class="form__form">
+                <label class="form__label">
+                  Your name
+                  <input type="text" name="name" class="form-control form__input input" />
+                </label>
+                <label class="form__label">
+                  Email
+                  <input type="email" name="email" class="form-control form__input input" />
+                </label>
+                <label class="form__label input input__pass input__pass-show" onclick="showPass()">
+                  <span class="input__icon">show</span>
+                  Password
+                </label>
+                <input type="password" name="pass" id="pass"
+                  class="form-control form__input input input__pass input__pass-show" />
 
-                  <button
-                    class="btn button button__dark front__button form__button"
-                  >
-                    Send message
-                  </button>
-                  <p class="form__paragraph form__paragraph-bot paragraph">
-                    If you need to have a DNA first, just contact us at
-                    <a href="email@gmail.com" class="form__email"
-                      ><b>email@gmail.com</b></a
-                    >
-                  </p>
-                </form>
-                <img
-                  src="./img/home-page/map.png"
-                  alt="map"
-                  class="form__map"
-                />
-              </div>
+                <button class="btn button button__dark front__button form__button">
+                  Send message
+                </button>
+                <p class="form__paragraph form__paragraph-bot paragraph">
+                  If you need to have a DNA first, just contact us at
+                  <a href="email@gmail.com" class="form__email"><b>email@gmail.com</b></a>
+                </p>
+              </form>
+              <img src="./img/home-page/map.png" alt="map" class="form__map" />
             </div>
           </div>
         </div>
-        <div class="contact__wrapper contact__wrapper-bg">
-          <div class="contact__container">
-            <h2 class="contact__head contact__head-left head2">
-              What will be next step?
-            </h2>
-            <ol class="contact__list">
-              <li class="contact__item">
-                <h5 class="contact__head contact__head-mini">
-                  We’ll prepare a proposal
-                </h5>
-                <p class="contact__desc paragraph paragraph-small">
-                  Required scope, timeline and apr. price will be included if
-                  you provide us with detail information about a project.
-                </p>
-                <div class="contact__connect"></div>
-              </li>
-              <li class="contact__item">
-                <h5 class="contact__head contact__head-mini">
-                  Together we discuss it
-                </h5>
-                <p class="contact__desc paragraph paragraph-small">
-                  Let’s get acquainted and discuss all the possible variant and
-                  options. Google Hangouts or Skype usually wirks great.
-                </p>
-                <div class="contact__connect"></div>
-              </li>
-              <li class="contact__item">
-                <h5 class="contact__head contact__head-mini">
-                  Let’s start building
-                </h5>
-                <p class="contact__desc paragraph paragraph-small">
-                  When the contract is signed and all goals are set we can start
-                  the first sprint.
-                </p>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <div
-        class="footer__wrapper d-flex justify-content-between align-items-center"
-      >
-        <div class="footer__socials socials">
-          <a href="https://www.facebook.com/" class="socials__item">
-            <object
-              data="./img/atom-icons/a-icon-facebook.svg"
-              type="image/svg+xml"
-              class="icon icon__facebook"
-            ></object>
-          </a>
-          <a href="https://www.instagram.com/" class="socials__item">
-            <object
-              data="./img/atom-icons/a-icon-instagram.svg"
-              type="image/svg+xml"
-              class="icon icon__instagram"
-            ></object>
-          </a>
-          <a href="https://dribbble.com/" class="socials__item">
-            <object
-              data="./img/atom-icons/a-icon-dribbble.svg"
-              type="image/svg+xml"
-              class="icon icon__dribbble"
-            ></object>
-          </a>
-        </div>
-        <a href="./index.html" class="footer__logo logo">
-          BlogWorld
-        </a>
-        <p class="footer__paragraph paragraph paragraph-small">
-          ©2019 All Rights Reserved.
-        </p>
       </div>
-    </footer>
+      <div class="contact__wrapper contact__wrapper-bg">
+        <div class="contact__container">
+          <h2 class="contact__head contact__head-left head2">
+            What will be next step?
+          </h2>
+          <ol class="contact__list">
+            <li class="contact__item">
+              <h5 class="contact__head contact__head-mini">
+                We’ll prepare a proposal
+              </h5>
+              <p class="contact__desc paragraph paragraph-small">
+                Required scope, timeline and apr. price will be included if
+                you provide us with detail information about a project.
+              </p>
+              <div class="contact__connect"></div>
+            </li>
+            <li class="contact__item">
+              <h5 class="contact__head contact__head-mini">
+                Together we discuss it
+              </h5>
+              <p class="contact__desc paragraph paragraph-small">
+                Let’s get acquainted and discuss all the possible variant and
+                options. Google Hangouts or Skype usually wirks great.
+              </p>
+              <div class="contact__connect"></div>
+            </li>
+            <li class="contact__item">
+              <h5 class="contact__head contact__head-mini">
+                Let’s start building
+              </h5>
+              <p class="contact__desc paragraph paragraph-small">
+                When the contract is signed and all goals are set we can start
+                the first sprint.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrapper d-flex justify-content-between align-items-center">
+      <div class="footer__socials socials">
+        <a href="https://www.facebook.com/" class="socials__item">
+          <object data="./img/atom-icons/a-icon-facebook.svg" type="image/svg+xml" class="icon icon__facebook"></object>
+        </a>
+        <a href="https://www.instagram.com/" class="socials__item">
+          <object data="./img/atom-icons/a-icon-instagram.svg" type="image/svg+xml"
+            class="icon icon__instagram"></object>
+        </a>
+        <a href="https://dribbble.com/" class="socials__item">
+          <object data="./img/atom-icons/a-icon-dribbble.svg" type="image/svg+xml" class="icon icon__dribbble"></object>
+        </a>
+      </div>
+      <a href="./index.html" class="footer__logo logo">
+        BlogWorld
+      </a>
+      <p class="footer__paragraph paragraph paragraph-small">
+        ©2019 All Rights Reserved.
+      </p>
+    </div>
+  </footer>
 
-    <script src="./js/index.js"></script>
-    <!-- <script src="./js/new-post.js"></script> -->
-  </body>
+  <script src="./js/index.js"></script>
+</body>
+
 </html>

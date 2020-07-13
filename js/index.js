@@ -21,17 +21,6 @@ const default_config = {
   hoverStop: false
 }
 class Slide {
-  moveLeft = 0;
-  move = 0;
-  totalPercent = 100;
-  start = 0;
-  end = 0;
-  delay = 2000;
-  sliderArray = [];
-  pos = 0;
-  moveTimeout;
-
-
   /**
    *
    * @param {string} selectorSlides
@@ -59,10 +48,18 @@ class Slide {
       ...config
     };
     this.showSlides = showSlides;
+    this.moveLeft = 0;
+    this.move = 0;
+    this.totalPercent = 100;
+    this.start = 0;
+    this.end = 0;
+    this.delay = 2000;
+    this.sliderArray = [];
+    this.pos = 0;
+    this.moveTimeout;
     this.slideWidth = this.sliderList[0].clientWidth;
     this.wrapperWidth = this.sliderWrapper.clientWidth;
     this.step = this.wrapperWidth / showSlides / this.wrapperWidth * this.totalPercent;
-    // this.interval = 0;
     this._handleSwipeEndBind = this._handleSwipeEnd.bind(this);
     this._moveSliderBind = this._moveSlider.bind(this, this.config.direction);
     this._moveLaterBind = this._moveLater.bind(this, this.config.direction)
@@ -129,7 +126,6 @@ class Slide {
   }
 
   _moveSlider(direction) {
-    console.log('here')
     let nextSlide;
     if (direction === 'right') {
       this.moveLeft++;
@@ -180,13 +176,13 @@ class Slide {
   }
 
   // sets aside the mooving function
+
   _moveLater(direction) {
     this.moveTimeout = setTimeout(this._moveSliderBind, this.delay, direction)
   }
 
   async _controlButtons() {
     if (event.target.classList.contains(this.selectorButton.slice(1))) {
-      console.log('hey')
       let direction = event.target.id.includes(this.buttonNext.id)
         ? 'right'
         : 'left';
@@ -207,7 +203,6 @@ class Slide {
     if (!this.config.isInfinity) {
       return;
     }
-    console.log(this._moveLater)
     this.sliderWrapper.addEventListener('transitionend', this._moveLaterBind);
   }
 
@@ -218,6 +213,7 @@ class Slide {
   }
 
   addListeners() {
+
     // add listenr to touchstart event
 
     this.sliderWrapper.addEventListener(
@@ -237,7 +233,6 @@ class Slide {
         clearTimeout(this.moveTimeout)
       });
       this.sliderWrapper.addEventListener('mouseleave', () => {
-        // clearInterval(this.interval);
         this.sliderWrapper.removeEventListener(
           'transitionend',
           this._moveLaterBind
