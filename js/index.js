@@ -14,12 +14,12 @@ function active() {
   document.getElementById('home').classList = 'header__item active';
 }
 
-const default_config = {
-  direction: 'right',
-  interval: 3000,
-  isInfinity: false,
-  hoverStop: false
-}
+// const default_config = {
+//   direction: 'right',
+//   interval: 3000,
+//   isInfinity: false,
+//   hoverStop: false
+// }
 class Slide {
   /**
    *
@@ -44,8 +44,10 @@ class Slide {
     this.buttonPrev = this.toolbar[0];
     this.buttonNext = this.toolbar[this.toolbar.length - 1];
     this.config = {
-      ...default_config,
-      ...config
+      direction: 'right',
+      interval: 3000,
+      isInfinity: false,
+      hoverStop: false
     };
     this.showSlides = showSlides;
     this.moveLeft = 0;
@@ -63,6 +65,14 @@ class Slide {
     this._handleSwipeEndBind = this._handleSwipeEnd.bind(this);
     this._moveSliderBind = this._moveSlider.bind(this, this.config.direction);
     this._moveLaterBind = this._moveLater.bind(this, this.config.direction)
+
+    for (let key in config) {
+      if (key in config) {
+        this.config[key] = config[key];
+      } else {
+        this.config.key
+      }
+    }
 
     this._onLoad();
   }
@@ -245,6 +255,8 @@ class Slide {
   }
 }
 
+const numberOfSlide = 3;
+
 let slider = new Slide(
   '.portfolio__container',
   '#portfolio-list',
@@ -253,7 +265,7 @@ let slider = new Slide(
     isInfinity: true,
     hoverStop: true
   },
-  3
+  numberOfSlide
 );
 
 slider.addListeners();
