@@ -1,0 +1,46 @@
+.input {
+    position: relative;
+    width: $min-width;
+
+    &__error {
+        border: 1px solid $error-color;
+    }
+
+    &__icon {
+        min-width: 10px;
+        display: block;
+        position: absolute;
+        top: -2px;
+        letter-spacing: 0;
+        font-size: 14px;
+        line-height: 23px;
+        padding-left: 20px;
+        left: 265px;
+        background: url("../img/atom-icons/a-icon-showpass.svg") no-repeat left;
+        cursor: pointer;
+
+                &.show {
+                    
+                left: 267px;
+                background: url("../img/atom-icons/a-icon-hidepass.svg") no-repeat left;
+            }
+        }
+
+    &-search {
+        // border: 1px solid $main-dark-color;
+        border: none;
+        height: 45px;
+        padding-left: 8px;
+        padding-top: 4px;
+        letter-spacing: -0.5px;
+
+        &::placeholder {
+            color: $main-dark-color;
+        }
+    }
+
+    &:focus {
+        border: none;
+        box-shadow: none;
+    }
+}

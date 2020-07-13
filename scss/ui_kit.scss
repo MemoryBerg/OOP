@@ -1,0 +1,36 @@
+@import "./custom-variables";
+@import "../node_modules/bootstrap-scss/functions";
+@import "../node_modules/bootstrap-scss/_variables";
+@import "../node_modules/bootstrap-scss/_mixins";
+@import "../node_modules/bootstrap-scss/_buttons";
+@import "../node_modules/bootstrap-scss/button-group";
+@import "../node_modules/bootstrap-scss/forms";
+@import "../node_modules/bootstrap-scss/input-group";
+@import "./buttons.scss";
+@import "./icons.scss";
+@import "./inputs.scss";
+@import "./lines.scss";
+
+.form {
+
+    &__input {
+
+        &:focus {
+            border: 1px solid #4D4949;
+            box-shadow: none;
+        }
+    }
+}
+
+.search {
+    width: $min-width;
+}
+
+.btn-toolbar {
+    justify-content: flex-end;
+}
+
+.no-radius {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}

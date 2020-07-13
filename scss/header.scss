@@ -1,0 +1,103 @@
+@import "./custom-variables.scss";
+
+.header {
+    padding: 28px 0;
+    color: #4D4C49;
+    position: absolute;
+    width: $max-width;
+    z-index: 10;
+
+    &__wrapper {
+        max-width: $content-width;
+        width: $content-width;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__list {
+        min-width: 400px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        font-size: 15px;
+        line-height: 25px;
+        margin-left: 40.5px;
+
+        &:active, &:hover {
+            font-weight: 600;
+            text-decoration: underline;
+        }
+    }
+
+    &__link {
+        vertical-align: sub;
+    }
+
+}
+
+#add-post {
+    border-radius: 5px;
+    box-shadow: 0 0 40px 40px $main-dark-color inset, 0 0 0 0 $main-dark-color;
+    padding: 5px 10px;
+    color: $main-light-color;
+    font-weight: 100;
+    transition: .15s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 10px 0 $main-dark-color inset, 0 0 10px 4px $main-dark-color;
+        color: $main-dark-color;
+    }
+}
+
+.add {
+    position: absolute;
+    top: 80px;
+    left: calc(50% - 580px);
+    width: 1160px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #979797;
+    padding: 20px;
+
+
+    &__form,
+    &__label {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form {
+        justify-content: space-between;
+        height: calc(100vh - 80px);
+        padding: 10px;
+        border: 1px solid #979797;
+        border-radius: 5px;
+    }
+
+    &__input,
+    &__type {
+        border: 1px solid black;
+        border-radius: 5px;
+        min-height: 30px;
+    }
+
+    &__type,
+    &__button {
+        min-width: 150px;
+    }
+
+    &__type {
+        align-self: start;
+    }
+
+    &__button {
+        align-self: center;
+    }
+
+    &__desc {
+        height: 150px;
+    }
+}

@@ -1,0 +1,23 @@
+.front {
+    width: 100%;
+    height: 600px;
+    background: url("../img/home-page/bg.jpg") no-repeat center/cover;
+
+    &__wrapper {
+        padding-top: 84px;
+        max-width: $content-width;
+        margin: 0 auto;
+    }
+
+    &__head {
+        max-width: 416px;
+        margin-top: 70px;
+    }
+    &__paragraph {
+        margin: 22px 0;
+    }
+
+    &__button {
+        margin-right: 22px;
+    }
+}

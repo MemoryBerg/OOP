@@ -1,0 +1,92 @@
+.reviews {
+
+    padding-top: 17px;
+    position: relative;
+
+    &__head {
+        text-align: left;
+    }
+
+    &__connect {
+        height: 820px;
+        border-left: 1.5px solid $connect-line-color;
+        position: absolute;
+        top: 107px;
+        left: 40px;
+        z-index: -1;
+
+        &::before, &::after {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1.5px solid $connect-line-color;
+            position: absolute;
+            left: -9px;
+        }
+
+        &::before {
+            top: -16px;
+        }
+
+        &::after {
+            bottom: -16px;
+        }
+    }
+}
+
+.comment {
+    display: flex;
+    margin: 60px 0 70px;
+    align-items: flex-start;
+
+    &:first-of-type {
+        .comment__body {
+            padding-top: 15px;
+        }
+    }
+
+
+    &__body {
+        background-color: $post-bg;
+        margin-left: 15px;
+        padding: 12px 22px 15px 18px;
+        max-width: 551px;
+    }
+
+    &__wrapper {
+        &-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+    }
+
+    &__user {
+        display: inline-block;
+    }
+
+    &__time {
+        margin-left: 6px;
+        letter-spacing: -0.4px;
+    }
+
+    &__paragraph {
+        margin: 16px 0;
+        letter-spacing: -0.45px;
+        line-height: 25px;
+    }
+
+    &__read {
+        font-size: 15px;
+        text-align: right;
+        letter-spacing: 0.1px;
+        text-decoration: underline;
+    }
+
+    &__button {
+        display: block;
+        margin: 85px 0 80px 292px;
+    }
+}

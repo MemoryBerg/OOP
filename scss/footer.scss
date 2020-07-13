@@ -1,0 +1,21 @@
+@import "./custom-variables.scss";
+
+.footer {
+
+    width: $max-width;
+
+    &__wrapper {
+        width: $content-width;
+        margin: 0 auto;
+        height: 74px;
+    }
+
+    &__paragraph {
+        width: 170px !important;
+        margin: 0 !important;
+    }
+
+    &__logo {
+        margin-left: 32px;
+    }
+}

@@ -1,0 +1,122 @@
+.about {
+    padding-top: 27px;
+
+    &__wrapper {
+        max-width: $content-width;
+        margin: 0 auto 61px;
+    }
+
+    &__head {
+        margin-top: 17px;
+    }
+
+    &__paragraph {
+        font-size: 15px;
+        line-height: 25px;
+        text-align: left;
+        margin: 22px auto;
+    }
+
+    &__container {
+        height: 630px;
+
+    }
+
+    &__section {
+        padding-top: 69px;
+    }
+
+    &__items {
+        margin-top: -1px;
+    }
+
+    &__item {
+        position: relative;
+        max-width: 260px !important;
+        height: 146px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 5px 5px 5px;
+        margin: 8px 0 58px;
+        max-width: 100%;
+
+        &-typo {
+            background: linear-gradient(90deg, #d9d383 0%, #b3d596 100%);
+
+            &::after {
+                background: linear-gradient(90deg, #d9d383 0%, #bcd592 100%);
+            }
+        }
+
+        &-icons {
+            background: linear-gradient(90deg, #cbdefb 0%, #8faffe 100%);
+
+            &::after {
+                background: linear-gradient(90deg, #c8dbfc 0%, #8faffe 100%);
+            }
+        }
+
+        &-accurate {
+            background: linear-gradient(90deg, #ff8888 0%, #ff9f9f 100%);
+            
+            &::after {
+                background: linear-gradient(90deg, #ff8888 0%, #ff9c9c 100%);
+            }
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -37px;
+            left: 0;
+            width: 229px;
+            height: 38px;
+            border-radius: 5px 5px 0 0;
+        }
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 10;
+            top: -35px;
+            left: -1px;
+            width: 33px;
+            height: 36px;
+            background-color: $main-light-color;
+            border-radius: 0 0 5px 0;
+        }
+
+        &:nth-child(even) {
+            border-radius: 5px 0 5px 5px;
+        }
+        &:nth-child(even)::after {
+            left: 31px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        &:nth-child(odd)::before {
+            left: calc(100% - 32px);
+            border-radius: 0 0 0 5px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__video {
+        max-width: 860px;
+        position: relative;
+        top: -30px;
+    }
+    &__play {
+        position: absolute;
+        top: calc(50% - 58px);
+        left: calc(50% - 56px);
+    
+    }
+    
+}

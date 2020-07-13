@@ -1,0 +1,111 @@
+.references {
+    padding: 170px 0 0 24px;
+
+    &__section {
+        background-color: #FCF6F6;
+        padding: 8px 0 0 29px;
+        margin-bottom: 70px;   
+    }
+
+    &__head {
+        text-align: left;
+        padding: 22.5px 0 5px;
+    }
+
+}
+
+.latest {
+
+    &__preview {
+        margin-top: 30px;
+        display: flex;
+    }
+
+    &__info {
+        padding-left: 16px;
+    }
+
+    &__title {
+        margin: 33px 0 25px;
+        line-height: 23px;
+        max-width: 220px;
+        letter-spacing: 0.1px;
+    }
+    &__button {
+        margin: 30px 0 30px calc(100% - 155px);
+    }
+    
+}
+
+.categories {
+    padding: 8px 0 28px 29px;
+
+    &__list {
+        padding: 16px 0 0 7px;
+    }
+
+    &__name {
+        padding: 15px 0 5px;
+        line-height: 28px;
+
+        &:hover {
+            padding-top: 19px;
+        }
+
+        &-food:hover .categories__item-food {
+            display: block;
+        }
+
+        &-travel:hover .categories__item-travel {
+            display: block;
+        }
+
+        &-technology:hover .categories__item-technology {
+            display: block;
+        }
+
+        &-product:hover .categories__item-product {
+            display: block;
+        }
+
+        &-inspiration:hover .categories__item-inspiration {
+            display: block;
+        }
+    }
+
+    &__wrapper {
+        padding-top: 2px;
+    }
+
+    &__item {
+        display: none;
+        margin: 14px 0 10px;
+        letter-spacing: -0.7px;
+
+        &:hover {
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+    }
+
+    &__hr {
+        display: block;
+        width: 400px;
+        border-bottom: 1px solid #E6E6E6;
+        margin-left: -5px;
+    }
+
+}
+
+.tags {
+    padding-top: 13px;
+
+    &__tag {
+        padding: 5px 14px;
+        margin: 0 12px 16px 0;
+    }
+
+    &__wrapper {
+        margin: 28px 0;
+    }
+}

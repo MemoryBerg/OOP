@@ -1,0 +1,34 @@
+.icon {
+    &-grey {
+        background-color: #d8d8d8;
+    }
+
+    &__like:hover {
+        cursor: pointer;
+    }
+
+    &__text {
+        display: inline-block;
+        font-size: 15px;
+        line-height: 25px;
+        margin-left: 5px;
+    }
+
+    &__star {
+        &-half::after {
+            content: "e";
+            display: block;
+            width: 14px;
+            height: 14px;
+            background: url("../img/atom-icons/Star.svg") no-repeat, -50%;
+            filter: grayscale(100%);
+        }
+        &-grey {
+            filter: grayscale(100%);
+        }
+    }
+
+    &__search {
+        margin-left: -8px;
+    }
+}

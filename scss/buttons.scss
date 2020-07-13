@@ -1,0 +1,91 @@
+.button {
+    padding: 10px 25px;
+    font-weight: 100;
+    font-size: 15px;
+
+    &__dark {
+        background: $main-dark-color;
+        color: $main-light-color;
+    }
+
+    &__light {
+        border: 1px solid $main-dark-color;    
+    }
+
+    &:hover {
+        color: $main-light-color !important;
+        background-color: $hover-color !important;
+    }
+
+    &__light:disabled {
+        opacity: 40%;
+    }
+
+    &__nav {
+        position: relative;
+        border: 1px solid #4D4949;
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        margin: 0;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            top: calc(50% - 6.5px);
+            border-top: 1px solid #000000;
+            border-right: 1px solid #000000;
+        }
+
+        &:hover {
+            background-color: transparent !important;
+        }
+    }
+
+    &__previous::before {
+        transform: rotate(225deg);
+        left: calc(50% - 5px);
+    }
+
+    &__next::before {
+        transform: rotate(45deg);
+        left: calc(50% - 10px);
+    }
+
+    &:hover {
+        background: none;
+        box-shadow: 0 0 10px #6D6D6D;
+    }
+
+    &__transparent {
+        background: rgba(0, 0, 0, 0.5);
+        margin: 0 !important;
+        border: none;
+        height: 60px;
+        width: 50px;
+        padding: 18px 19px 10px !important;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    &__wrapper {
+        max-width: 360px !important;
+        margin: 42px auto 40px !important;
+    }
+
+    &__search {
+        border: none;
+        z-index: 10;
+
+        &:hover, &:active {
+            background-color: $main-light-color !important;
+            border: none;
+            box-shadow: none;
+        }
+    }
+}

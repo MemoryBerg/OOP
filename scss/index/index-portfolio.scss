@@ -1,0 +1,82 @@
+.portfolio {
+  max-width: $content-width;
+  margin: 0 auto 61px;
+  overflow: hidden;
+
+  &__head {
+    margin-top: 17px;
+    padding: 16px 0 2px;
+  }
+
+  &__paragraph {
+    font-size: 15px;
+    line-height: 25px;
+    text-align: left;
+    margin: 22px auto;
+
+    &-light {
+      color: $main-light-color;
+      margin: -3px auto 31px;
+    }
+  }
+
+  &__wrapper {
+    justify-content: start;
+    flex-wrap: unset;
+    transition: transform 2s ease-out;
+  }
+
+  &__container {
+    width: 33.3%;
+    flex: 0 0 33.35%;
+    background-color: white;
+  }
+
+  &__post {
+    margin: 40px auto;
+    padding: 0;
+    max-width: 360px !important;
+    height: 243px;
+    // max-width: 100%;
+
+    &-ocean {
+      background: url("../img/home-page/bg\ img1.png") no-repeat;
+    }
+
+    &-city {
+      background: url("../img/home-page/bg\ img2.png") no-repeat;
+    }
+
+    &-mountains {
+      background: url("../img/home-page/bg\ img\ 3.png") no-repeat;
+    }
+
+    &-hover:hover {
+      box-shadow: 0 5px 15px #979797;
+    }
+
+    // &:nth-child(2) {
+    //   margin: 40px 40px 0;
+    // }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__title {
+    color: $main-light-color;
+    text-transform: uppercase;
+    font-weight: bold !important;
+    text-align: center !important;
+    line-height: 30px;
+    margin-top: 44px !important;
+    letter-spacing: 1.5px !important;
+    font-size: 18px !important;
+
+    &-btns {
+      margin-top: 100px !important;
+    }
+  }
+}
