@@ -14,12 +14,6 @@ function active() {
   document.getElementById('home').classList = 'header__item active';
 }
 
-// const default_config = {
-//   direction: 'right',
-//   interval: 3000,
-//   isInfinity: false,
-//   hoverStop: false
-// }
 class Slide {
   /**
    *
