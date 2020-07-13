@@ -21,6 +21,17 @@ const default_config = {
   hoverStop: false
 }
 class Slide {
+  moveLeft = 0;
+  move = 0;
+  totalPercent = 100;
+  start = 0;
+  end = 0;
+  delay = 2000;
+  sliderArray = [];
+  pos = 0;
+  moveTimeout;
+
+
   /**
    *
    * @param {string} selectorSlides
@@ -48,21 +59,13 @@ class Slide {
       ...config
     };
     this.showSlides = showSlides;
-    this.moveLeft = 0;
-    this.move = 0;
-    this.totalPercent = 100;
     this.slideWidth = this.sliderList[0].clientWidth;
     this.wrapperWidth = this.sliderWrapper.clientWidth;
     this.step = this.wrapperWidth / showSlides / this.wrapperWidth * this.totalPercent;
-    this.interval = 0;
+    // this.interval = 0;
     this._handleSwipeEndBind = this._handleSwipeEnd.bind(this);
     this._moveSliderBind = this._moveSlider.bind(this, this.config.direction);
     this._moveLaterBind = this._moveLater.bind(this, this.config.direction)
-    this.start = 0;
-    this.end = 0;
-    this.delay = 2000;
-    this.sliderArray = [];
-    this.pos = 0;
 
     this._onLoad();
   }
@@ -172,12 +175,13 @@ class Slide {
       'transitionend',
       this._moveSliderBind
     );
+    clearTimeout(this.moveTimeout)
     this.sliderWrapper.removeEventListener('mouseup', this._handleSwipeEndBind);
   }
 
   // sets aside the mooving function
-  async _moveLater(direction) {
-    await setTimeout(this._moveSliderBind, this.delay, direction)
+  _moveLater(direction) {
+    this.moveTimeout = setTimeout(this._moveSliderBind, this.delay, direction)
   }
 
   async _controlButtons() {
@@ -191,6 +195,7 @@ class Slide {
         'transitionend',
         this._moveLaterBind
       );
+      clearTimeout(this.moveTimeout)
       this.infinitySwiping(this.config.direction);
     }
   }
@@ -229,6 +234,7 @@ class Slide {
           'transitionend',
           this._moveLaterBind
         );
+        clearTimeout(this.moveTimeout)
       });
       this.sliderWrapper.addEventListener('mouseleave', () => {
         // clearInterval(this.interval);
@@ -236,6 +242,7 @@ class Slide {
           'transitionend',
           this._moveLaterBind
         );
+        clearTimeout(this.moveTimeout)
         this._moveSlider(this.config.direction);
         this.infinitySwiping(this.config.direction);
       });
