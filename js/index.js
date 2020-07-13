@@ -189,19 +189,15 @@ class Slide {
   async _controlButtons() {
     if (event.target.classList.contains(this.selectorButton.slice(1))) {
       console.log('hey')
-      this.sliderWrapper.removeEventListener(
-        'transitionend',
-        this._moveSliderBind
-      );
-
-      // event.preventDefault();
       let direction = event.target.id.includes(this.buttonNext.id)
         ? 'right'
         : 'left';
       await this._moveSlider(direction);
-      // clearInterval(this.interval);
-
-      // this.infinitySwiping(this.config.direction);
+      this.sliderWrapper.removeEventListener(
+        'transitionend',
+        this._moveLaterBind
+      );
+      this.infinitySwiping(this.config.direction);
     }
   }
 
@@ -226,14 +222,14 @@ class Slide {
         // clearInterval(this.interval);
         this.sliderWrapper.removeEventListener(
           'transitionend',
-          this._moveSliderBind
+          this._moveLaterBind
         );
       });
       this.sliderWrapper.addEventListener('mouseleave', () => {
         // clearInterval(this.interval);
         this.sliderWrapper.removeEventListener(
           'transitionend',
-          this._moveSliderBind
+          this._moveLaterBind
         );
         this._moveSlider(this.config.direction);
         this.infinitySwiping(this.config.direction);
@@ -256,7 +252,3 @@ let slider = new Slide(
 slider.addListeners();
 slider.infinitySwiping();
 slider.controlClick();
-
-// function hasKey(element, key) {
-//   return element.item === key;
-// }
