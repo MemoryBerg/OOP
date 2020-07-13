@@ -14,6 +14,12 @@ function active() {
   document.getElementById('home').classList = 'header__item active';
 }
 
+const default_config = {
+  direction: 'right',
+  interval: 3000,
+  isInfinity: false,
+  hoverStop: false
+}
 class Slide {
   /**
    *
@@ -21,6 +27,7 @@ class Slide {
    * @param {string} selectorParent
    * @param {string} selectorButton
    * @param {object} config
+   * @param {number} showSlides
    */
 
   constructor(
@@ -37,43 +44,37 @@ class Slide {
     this.buttonPrev = this.toolbar[0];
     this.buttonNext = this.toolbar[this.toolbar.length - 1];
     this.config = {
-      direction: 'right',
-      interval: 3000,
-      isInfinity: false,
-      hoverStop: false
+      ...default_config,
+      ...config
     };
+    this.showSlides = showSlides;
     this.moveLeft = 0;
     this.move = 0;
     this.totalPercent = 100;
     this.slideWidth = this.sliderList[0].clientWidth;
     this.wrapperWidth = this.sliderWrapper.clientWidth;
-    // this.step = (this.slideWidth / this.wrapperWidth) * 100;
-
     this.step = this.wrapperWidth / showSlides / this.wrapperWidth * this.totalPercent;
-    console.log(this.totalPercent);
-
     this.interval = 0;
     this._handleSwipeEndBind = this._handleSwipeEnd.bind(this);
     this._moveSliderBind = this._moveSlider.bind(this, this.config.direction);
+    this._moveLaterBind = this._moveLater.bind(this, this.config.direction)
     this.start = 0;
     this.end = 0;
     this.delay = 2000;
-
-    for (let key in config) {
-      key in config ? this.config[key] = config[key] : this.config[key];
-    }
-
     this.sliderArray = [];
-    let pos = 0;
+    this.pos = 0;
 
+    this._onLoad();
+  }
+
+  _onLoad() {
     for (let key of this.sliderList) {
-      console.log(key);
-      key.style.width = `${this.totalPercent / showSlides}%`;
-      key.style.flex = `0 0 ${this.totalPercent / showSlides}%`;
+      key.style.width = `${this.totalPercent / this.showSlides}%`;
+      key.style.flex = `0 0 ${this.totalPercent / this.showSlides}%`;
 
       let slide = {
         item: key,
-        position: pos,
+        position: this.pos,
         transform: 0
       };
 
@@ -85,9 +86,8 @@ class Slide {
       )) {
         this.sliderArray.push(slide);
       }
-      pos++;
+      this.pos++;
     }
-
     setTimeout(this._moveSliderBind, this.delay, this.config.direction);
   }
 
@@ -122,6 +122,7 @@ class Slide {
   }
 
   _moveSlider(direction) {
+    console.log('here')
     let nextSlide;
     if (direction === 'right') {
       this.moveLeft++;
@@ -131,9 +132,6 @@ class Slide {
       ) {
         nextSlide = this._firstSlide();
         this.sliderArray[nextSlide].position = this._getLast() + 1;
-
-        // this.sliderArray[nextSlide].transform += this.sliderList[0].width;
-
         this.sliderArray[nextSlide].transform += this.sliderArray.length * this.totalPercent;
         this.sliderArray[
           nextSlide
@@ -165,13 +163,16 @@ class Slide {
     this.end = event.changedTouches[event.changedTouches.length - 1].pageX;
 
     let direction = this.start > this.end ? 'right' : 'left';
-    slider._moveSlider(direction);
-    // clearInterval(this.interval);
+    this._moveSlider(direction);
     this.sliderWrapper.removeEventListener(
       'transitionend',
       this._moveSliderBind
     );
     this.sliderWrapper.removeEventListener('mouseup', this._handleSwipeEndBind);
+  }
+
+  async _moveLater(direction) {
+    await setTimeout(this._moveSliderBind, this.delay, direction)
   }
 
   infinitySwiping(direction) {
@@ -181,28 +182,26 @@ class Slide {
     if (!this.config.isInfinity) {
       return;
     }
-    // this.interval = setTimeout(this._moveSlider.bind(this), 2000, direction);
-    this.sliderWrapper.addEventListener('transitionend', this._moveSliderBind);
-    // this.interval = setInterval(() => {
-    //   this._moveSlider(direction);
-    // }, this.config.interval);
+    console.log(this._moveLater)
+    this.sliderWrapper.addEventListener('transitionend', this._moveLaterBind);
   }
 
-  _controlButtons() {
+  async _controlButtons() {
     if (event.target.classList.contains(this.selectorButton.slice(1))) {
+      console.log('hey')
       this.sliderWrapper.removeEventListener(
         'transitionend',
         this._moveSliderBind
       );
 
-      event.preventDefault();
+      // event.preventDefault();
       let direction = event.target.id.includes(this.buttonNext.id)
         ? 'right'
         : 'left';
-      this._moveSlider(direction);
+      await this._moveSlider(direction);
       // clearInterval(this.interval);
 
-      this.infinitySwiping(this.config.direction);
+      // this.infinitySwiping(this.config.direction);
     }
   }
 

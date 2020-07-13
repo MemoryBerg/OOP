@@ -4088,7 +4088,7 @@ div[data-result] {
 .portfolio__wrapper {
   justify-content: start;
   flex-wrap: unset;
-  transition: transform 2s ease-out;
+  transition: transform 1s ease-out;
 }
 .portfolio__container {
   width: 33.3%;
