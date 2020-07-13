@@ -91,6 +91,8 @@ class Slide {
     setTimeout(this._moveSliderBind, this.delay, this.config.direction);
   }
 
+  // identifies index of last or first element in slider
+
   _firstSlide() {
     let indexSlide = 0;
     let array = this.sliderArray;
@@ -112,6 +114,8 @@ class Slide {
     });
     return indexSlide;
   }
+
+  //gets last or first slide
 
   _getFirst() {
     return this.sliderArray[this._firstSlide()].position;
@@ -171,19 +175,9 @@ class Slide {
     this.sliderWrapper.removeEventListener('mouseup', this._handleSwipeEndBind);
   }
 
+  // sets aside the mooving function
   async _moveLater(direction) {
     await setTimeout(this._moveSliderBind, this.delay, direction)
-  }
-
-  infinitySwiping(direction) {
-    if (!direction) {
-      direction = this.config.direction;
-    }
-    if (!this.config.isInfinity) {
-      return;
-    }
-    console.log(this._moveLater)
-    this.sliderWrapper.addEventListener('transitionend', this._moveLaterBind);
   }
 
   async _controlButtons() {
@@ -199,6 +193,17 @@ class Slide {
       );
       this.infinitySwiping(this.config.direction);
     }
+  }
+
+  infinitySwiping(direction) {
+    if (!direction) {
+      direction = this.config.direction;
+    }
+    if (!this.config.isInfinity) {
+      return;
+    }
+    console.log(this._moveLater)
+    this.sliderWrapper.addEventListener('transitionend', this._moveLaterBind);
   }
 
   controlClick() {
